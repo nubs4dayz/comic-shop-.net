@@ -1,0 +1,17 @@
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Service\bin\Debug\net6.0\Shop.Service.deps.json
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Service\bin\Debug\net6.0\Shop.Service.dll
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Service\bin\Debug\net6.0\Shop.Service.pdb
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Service\bin\Debug\net6.0\Shop.Domain.dll
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Service\bin\Debug\net6.0\Shop.Repository.dll
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Service\bin\Debug\net6.0\Shop.Domain.pdb
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Service\bin\Debug\net6.0\Shop.Repository.pdb
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Service\obj\Debug\net6.0\Shop.Service.csproj.AssemblyReference.cache
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Service\obj\Debug\net6.0\Shop.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Service\obj\Debug\net6.0\Shop.Service.AssemblyInfoInputs.cache
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Service\obj\Debug\net6.0\Shop.Service.AssemblyInfo.cs
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Service\obj\Debug\net6.0\Shop.Service.csproj.CoreCompileInputs.cache
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Service\obj\Debug\net6.0\Shop.Service.csproj.CopyComplete
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Service\obj\Debug\net6.0\Shop.Service.dll
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Service\obj\Debug\net6.0\refint\Shop.Service.dll
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Service\obj\Debug\net6.0\Shop.Service.pdb
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Service\obj\Debug\net6.0\ref\Shop.Service.dll

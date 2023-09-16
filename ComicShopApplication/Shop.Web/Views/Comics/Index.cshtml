@@ -1,0 +1,141 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Shop.Domain.Identity.ShopApplicationUser> SignInManager
+@inject UserManager<Shop.Domain.Identity.ShopApplicationUser> UserManager
+
+
+@model List<Shop.Domain.DomainModels.Comic>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+     <div class="row">
+           <div class="col-7">
+                @if (User.IsInRole("Administrator"))
+                {
+                    <form asp-controller="Comics" asp-action="ExportComics" enctype="multipart/form-data">
+                        <div class="form-group p-2">
+                            <div class="row">
+                                <div class="col-1">
+                                    <label for="genre" class="m-1">Genre: </label>
+                                </div>
+                                <div class="col-3">
+                                    <select id="genre" name="genre" class="form-control">
+                                        <option value="All">All</option>
+                                        <option value="Action">Action</option>
+                                        <option value="Fantasy">Fantasy</option>
+                                        <option value="Horror">Horror</option>
+                                        <option value="Science Fiction">Science Fiction</option>
+                                        <option value="Adventure">Adventure</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-4">
+                                    <button type="submit" class="btn btn-outline-primary">Export Comics</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                }
+        </div>
+
+
+        <div class="col-5 text-end">
+             <form asp-controller="Comics" asp-action="Index" enctype="multipart/form-data">
+                <div class="form-group p-2">
+                    <div class="row">
+                        <div class="col-9">
+                            <input type="search" name="search" id="search" class="form-control" />
+                        </div>
+                        <div class="col-3">
+                            <button type="submit" class="btn btn-outline-primary">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @if (User.IsInRole("Administrator"))
+    {
+        <div class="row">
+            <a class="btn btn-dark" asp-controller="Comics" asp-action="Create">Insert New Comic</a>
+        </div>
+    }
+    else
+    {
+        <hr />
+    }
+
+    <div>
+       @for (int i = 0; i < Model.Count; i++)
+       {
+        var item = Model[i];
+
+        if(i % 3 == 0)
+        {
+           @:<div class="row m-3 d-flex justify-content-evenly">
+        }
+
+            <div class="card m-4 col-4 border border-2 border-primary" style="width: 19rem; background-color: #FFF7ED;">
+                <img class="card-img-top m-1 rounded-3" src="@item.ComicCover" style="height: 350px; padding-right: 5px" alt="Image for Comic!">
+
+                <div class="card-body">
+                    <h6 class="card-title text-center">@item.ComicName</h6>
+                    <div class="row">
+                        <div class="col d-flex justify-content-between">
+                            <p class="card-text">@item.ComicPublisher</p>
+                            <p class="card-text">@item.ComicPrice ДЕН.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <div class="row m-1">
+                        <div class="col-7">
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                                <div class="d-grid gap-2">
+                                    <a asp-controller="Comics" asp-action="AddComicToCart" asp-route-id="@item.Id" class="btn btn-success">Add to Cart</a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="d-grid gap-2">
+                                    <a asp-controller="Comics" asp-action="AddComicToCart" asp-route-id="@item.Id" class="btn btn-success disabled">Add to Cart</a>
+                                </div>
+                            }
+                        </div>
+                        <div class="col">
+                            <div class="d-grid gap-2">
+                            <a asp-controller="Comics" asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <div class="row m-1">
+                            <div class="col-7">
+                                <div class="d-grid gap-2">
+                                <a asp-controller="Comics" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="d-grid gap-2">
+                                <a asp-controller="Comics" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            if(i % 3 == 2)
+           {
+               @:</div>
+           }
+       }
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="cover" style="position: relative; text-align: center; color: white; margin-top: 30px">
+    <img class="m-3" id="coverPhoto" src="https://wallpapers.com/images/hd/famous-comic-book-collection-mzqzulamob1epsh5.jpg" alt="Comic" style="width:1000px;height:700px;border-radius:10px;opacity:0.6">
+    <div class="coverBlock" style="position:absolute;top:35%;left:50%;transform:translate(-50%, -50%)">
+        <h1 class="jumbotron" style="background: #C7C0F0; border-radius: 100px ">Welcome to the Our Comic Book Shop</h1>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 500px 500px; position: absolute; top: 65%; left: 50%; transform: translate(-50%, -50%)">
+        <div style="display:inline-block;text-align:center;">
+            <div class="coverBlock" style="width: 400px; background: #C7C0F0; text-align: center; display: inline-block; border-radius: 30px">
+                <h4>Learn more about us!!!</h4>
+                <p><a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="About">About Us</a></p>
+            </div>
+        </div>
+
+        <div style="display: inline-block; text-align: center;">
+            <div class="coverBlock" style="width: 400px; background: #C7C0F0; text-align: center; display: inline-block; border-radius: 30px ">
+                <h4>Start browsing the comics now!!!</h4>
+                <p><a class="btn btn-primary" asp-area="" asp-controller="Comics" asp-action="Index">Comics</a></p>
+            </div>
+        </div>
+    </div>
+</div>

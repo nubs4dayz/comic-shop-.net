@@ -1,0 +1,68 @@
+﻿@model Shop.Domain.DomainModels.Comic
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Comic</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ComicName" class="control-label">Comic Name</label>
+                <input asp-for="ComicName" class="form-control" placeholder="Comic Name" />
+                <span asp-validation-for="ComicName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComicCover" class="control-label">Comic Cover</label>
+                <input asp-for="ComicCover" class="form-control" placeholder="Comic Cover" />
+                <span asp-validation-for="ComicCover" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComicDescription" class="control-label">Comic Description</label>
+                <textarea asp-for="ComicDescription" rows=5 class="form-control" placeholder="Comic Description"></textarea>
+                <span asp-validation-for="ComicDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComicGenre" class="control-label">Comic Genre</label>
+                <select asp-for="ComicGenre" class="form-control">
+                    <option value="Action">Action</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Other">Other</option>
+                </select>
+                <span asp-validation-for="ComicGenre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComicAuthor" class="control-label">Comic Author</label>
+                <input asp-for="ComicAuthor" class="form-control" placeholder="Comic Author" />
+                <span asp-validation-for="ComicAuthor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComicPublisher" class="control-label">Comic Publisher</label>
+                <input asp-for="ComicPublisher" class="form-control" placeholder="Comic Publisher" />
+                <span asp-validation-for="ComicPublisher" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComicPrice" class="control-label">Comic Price</label>
+                <input type="number" asp-for="ComicPrice" class="form-control" placeholder="Comic Price" />
+                <span asp-validation-for="ComicPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group m-2">
+                <a asp-action="Index" class="btn btn-warning">Back to List</a>
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

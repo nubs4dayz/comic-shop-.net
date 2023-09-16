@@ -1,0 +1,52 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Shop.Domain.Identity.ShopApplicationUser> SignInManager
+@inject UserManager<Shop.Domain.Identity.ShopApplicationUser> UserManager
+
+@model Shop.Domain.DomainModels.Comic
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <img class="col-6 pb-2 pt-2" alt="comic cover" src="@Model.ComicCover">
+    <div class="col-6 pb-2 pt-2">
+        <div class="card" style="background-color: #FFF7ED">
+          <div class="card-header">
+              <h2>@Model.ComicName</h2>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+                @Model.ComicDescription
+            </p>
+
+              <dl class="row">
+                  <dt class="col-sm-3">Comic Author</dt>
+                  <dd class="col-sm-9">@Model.ComicAuthor</dd>
+                  <dt class="col-sm-3">Comic Publisher</dt>
+                  <dd class="col-sm-9">@Model.ComicPublisher</dd>
+                  <dt class="col-sm-3">Comic Genre</dt>
+                  <dd class="col-sm-9">@Model.ComicGenre</dd>
+              </dl>
+
+              <h4 class="border border-3 border-danger rounded-3 text-center p-1">@Model.ComicPrice ДЕН.</h4>
+
+              <div class="row d-flex justify-content-between">
+                  <div class="col">
+                      <a asp-action="Index" class="btn btn-warning m-2" style="text-align: center">Back to List</a>
+                  </div>
+                    <div class="col-8">
+                      @if (SignInManager.IsSignedIn(User))
+                      {
+                          <div class="row text-center">
+                                <a asp-controller="Comics" asp-action="AddComicToCart" asp-route-id="@Model.Id" class="btn btn-success m-2">Add to Cart</a>
+                          </div>
+                      }
+                  </div>
+              </div>
+
+          </div>
+        </div>
+    </div>
+    </div>

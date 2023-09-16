@@ -1,0 +1,12 @@
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Domain\bin\Debug\net6.0\Shop.Domain.deps.json
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Domain\bin\Debug\net6.0\Shop.Domain.dll
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Domain\bin\Debug\net6.0\Shop.Domain.pdb
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Domain\obj\Debug\net6.0\Shop.Domain.csproj.AssemblyReference.cache
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Domain\obj\Debug\net6.0\Shop.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Domain\obj\Debug\net6.0\Shop.Domain.AssemblyInfoInputs.cache
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Domain\obj\Debug\net6.0\Shop.Domain.AssemblyInfo.cs
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Domain\obj\Debug\net6.0\Shop.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Domain\obj\Debug\net6.0\Shop.Domain.dll
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Domain\obj\Debug\net6.0\refint\Shop.Domain.dll
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Domain\obj\Debug\net6.0\Shop.Domain.pdb
+C:\Users\Andrej\Desktop\ComicShop\ComicShopApplication\Shop.Domain\obj\Debug\net6.0\ref\Shop.Domain.dll

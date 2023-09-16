@@ -1,0 +1,70 @@
+﻿@using Microsoft.Extensions.Options
+@model Shop.Domain.DTO.ShoppingCartDto
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    @if (@Model.TotalPrice == 0)
+    {
+        <div class="row p-2">
+            <a asp-controller="ShoppingCart" asp-action="Order" class="btn btn-info disabled">Order Now</a>
+        </div>
+    }
+    else
+    {
+        <div class="row p-2">
+            <a asp-controller="ShoppingCart" asp-action="Order" class="btn btn-info">Order Now</a>
+        </div>
+    }
+
+    <div class="row m-4">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Comic Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Comic Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Comics.Count == 0)
+                {
+                    <tr>
+                        <td colspan="5">No active Comics</td>
+                    </tr>
+                }
+                else
+                {
+                    @for (int i = 0; i < Model.Comics.Count; i++)
+                    {
+                        var item = Model.Comics[i];
+
+                        <tr>
+                            <th scope="row">@(i + 1)</th>
+                            <td>@item.CurrentComic.ComicName</td>
+                            <td>@item.Quantity</td>
+                            <td>@item.CurrentComic.ComicPrice ДЕН.</td>
+                            <td><a asp-controller="ShoppingCart" asp-action="DeleteFromShoppingCart" asp-route-id="@item.ComicId" class="btn btn-danger">Delete From ShoppingCart</a></td>
+                        </tr>
+                    }
+                }
+            </tbody>
+            <tfoot class="thead-dark">
+                <tr>
+                    <th scope="col">Total Price:</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col">@Model.TotalPrice ДЕН.</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+</div>
